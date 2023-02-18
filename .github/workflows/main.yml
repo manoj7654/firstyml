@@ -19,8 +19,10 @@
 name: Print Node Version
 on:
  push:
+   branches:
+     - main
 jobs:
-  print-version:
+  versions:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -28,6 +30,6 @@ jobs:
       - name: install node
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '18.x'
       - name: Print Node Version
         run: node -v
